@@ -2,7 +2,16 @@
 
 159 Claude skills, one folder per skill, in `skills/`.
 
-## Install on another computer / Claude account (Claude Code)
+## Install as two zip uploads (Claude desktop app / Cowork)
+
+The skill uploader only accepts **one skill per zip**, so all skills are also packaged as two **plugins**. A plugin can hold many skills.
+
+- `zips/my-skills-part-1.zip`: 80 skills (accessibility-audit … frontend-component-build)
+- `zips/my-skills-part-2.zip`: 79 skills (full-output-enforcement … writing-skills)
+
+Upload each zip as a **plugin**, not as a skill: open the **Plugins** section of the Claude app's customize settings, choose to upload a plugin, and pick the zip. Do it twice, once per zip. The skills then show up prefixed with the plugin name, e.g. `my-skills-part-2:seo-keyword`.
+
+## Install by copying folders (Claude Code)
 
 1. On GitHub, click **Code → Download ZIP** and unzip it.
 2. Open the unzipped folder, then open `skills/`.
