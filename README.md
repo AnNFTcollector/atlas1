@@ -1,48 +1,20 @@
 # atlas1 — Claude skills
 
-159 Claude skills, one folder per skill, in `skills/`.
+159 Claude skills in `skills/`, one **`.skill`** file per skill, ready for the Claude app's skill uploader.
 
-## Install as zip uploads (Claude desktop app / Cowork)
+## Install on another Claude account
 
-The skill uploader only accepts **one skill per zip**, so all skills are also packaged as **plugins**. A plugin can hold many skills. Uploads are limited to 200 files per zip, and the skills have 885 files, so there are five zips, each under 200:
+1. On GitHub, click **Code → Download ZIP**, unzip it, and open the `skills` folder.
+2. In the Claude app, open **Settings → Capabilities → Skills** and upload the `.skill` files from that folder.
 
-| Zip | Skills | Files | Range |
-|---|---|---|---|
-| `zips/my-skills-part-1.zip` | 33 | 159 | accessibility-audit … calculator-design |
-| `zips/my-skills-part-2.zip` | 18 | 195 | canvas-design … creative-brief-selector |
-| `zips/my-skills-part-3.zip` | 43 | 194 | creative-direction … interactive-product-tour |
-| `zips/my-skills-part-4.zip` | 38 | 195 | internationalization … seo-keyword-gap-audit |
-| `zips/my-skills-part-5.zip` | 27 | 147 | seo-offpage … writing-skills |
+Each `.skill` file holds one complete skill: its `SKILL.md` plus any reference docs, scripts, fonts or other assets it uses, all under 200 files. Every file passed `skill-creator`'s validator when it was packaged.
 
-Upload each zip as a **plugin**, not as a skill: open the **Plugins** section of the Claude app's customize settings, choose to upload a plugin, and pick the zip. Repeat for all five. The skills then show up prefixed with the plugin name, e.g. `my-skills-part-4:seo-keyword`.
+## Using them in Claude Code instead
 
-## Install by copying folders (Claude Code)
-
-1. On GitHub, click **Code → Download ZIP** and unzip it.
-2. Open the unzipped folder, then open `skills/`.
-3. Select **all folders** inside `skills/` and copy them into your personal skills folder:
-   - **Windows:** `C:\Users\<your-name>\.claude\skills\`
-   - **macOS / Linux:** `~/.claude/skills/`
-
-   Create the `skills` folder if it doesn't exist. (`.claude` is hidden: on Windows, type the path into the Explorer address bar; on macOS, press `Cmd+Shift+.` in Finder.)
-4. Restart Claude Code. Type `/` or ask "what skills do you have?" to confirm they're loaded.
-
-The result should look like:
-
-```
-.claude/
-└── skills/
-    ├── accessibility-audit/
-    │   └── SKILL.md
-    ├── brainstorming/
-    │   └── SKILL.md
-    └── ...
-```
-
-Each skill folder must sit directly inside `skills/` (not nested one level deeper), with its `SKILL.md` at the top of the folder.
+A `.skill` file is a zip archive. To use one in Claude Code, unzip it into your personal skills folder (`C:\Users\<your-name>\.claude\skills\` on Windows, `~/.claude/skills/` on macOS/Linux). It extracts as a `<skill-name>/` folder containing `SKILL.md`. Restart Claude Code afterwards.
 
 ## Notes
 
-- **claude.ai / Claude desktop app:** these don't read a folder on disk. Upload skills one at a time under **Settings → Capabilities → Skills**, each as a `.zip` of a single skill folder.
+- Some skills had extra header fields (`category`, `catalog_summary`, `display_order`) that the uploader doesn't accept. They were moved under `metadata:` in the `SKILL.md` header, so nothing was lost.
 - **Adspirer skills** (`adspirer-*`) need the Adspirer connector set up on the new account to do anything.
-- **Not included:** `docx`, `pdf`, `pptx`, `xlsx`, `computer-use`, `chrome-browser` and `built-in-browser`. Their license forbids copying them outside Claude, and Anthropic provides them to every account anyway. Skills built into Claude Code itself (e.g. `code-review`, `simplify`) aren't included either, since every install already has them.
+- **Not included:** `docx`, `pdf`, `pptx`, `xlsx`, `computer-use`, `chrome-browser` and `built-in-browser`. Their license forbids copying them outside Claude, and Anthropic provides them to every account anyway.
