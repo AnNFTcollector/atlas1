@@ -2,14 +2,19 @@
 
 159 Claude skills, one folder per skill, in `skills/`.
 
-## Install as two zip uploads (Claude desktop app / Cowork)
+## Install as zip uploads (Claude desktop app / Cowork)
 
-The skill uploader only accepts **one skill per zip**, so all skills are also packaged as two **plugins**. A plugin can hold many skills.
+The skill uploader only accepts **one skill per zip**, so all skills are also packaged as **plugins**. A plugin can hold many skills. Uploads are limited to 200 files per zip, and the skills have 885 files, so there are five zips, each under 200:
 
-- `zips/my-skills-part-1.zip`: 80 skills (accessibility-audit … frontend-component-build)
-- `zips/my-skills-part-2.zip`: 79 skills (full-output-enforcement … writing-skills)
+| Zip | Skills | Files | Range |
+|---|---|---|---|
+| `zips/my-skills-part-1.zip` | 33 | 159 | accessibility-audit … calculator-design |
+| `zips/my-skills-part-2.zip` | 18 | 195 | canvas-design … creative-brief-selector |
+| `zips/my-skills-part-3.zip` | 43 | 194 | creative-direction … interactive-product-tour |
+| `zips/my-skills-part-4.zip` | 38 | 195 | internationalization … seo-keyword-gap-audit |
+| `zips/my-skills-part-5.zip` | 27 | 147 | seo-offpage … writing-skills |
 
-Upload each zip as a **plugin**, not as a skill: open the **Plugins** section of the Claude app's customize settings, choose to upload a plugin, and pick the zip. Do it twice, once per zip. The skills then show up prefixed with the plugin name, e.g. `my-skills-part-2:seo-keyword`.
+Upload each zip as a **plugin**, not as a skill: open the **Plugins** section of the Claude app's customize settings, choose to upload a plugin, and pick the zip. Repeat for all five. The skills then show up prefixed with the plugin name, e.g. `my-skills-part-4:seo-keyword`.
 
 ## Install by copying folders (Claude Code)
 
